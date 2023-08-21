@@ -1,2 +1,7 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>Users</h1>
+<p>ログイン後ここに遷移する</p>
+<div>
+  <%= image_tag @user.get_image %>
+  <p>投稿ユーザー画像：<%= image_tag 'default-image.jpg' %></p>
+  <p>ユーザーネーム：<%= @user.user.name %></p>
+</div>
