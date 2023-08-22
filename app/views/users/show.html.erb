@@ -1,7 +1,6 @@
-<h1>Users</h1>
+<h1>Books</h1>
 <p>ログイン後ここに遷移する</p>
 <div>
-  <%= image_tag @user.get_image %>
-  <p>投稿ユーザー画像：<%= image_tag 'default-image.jpg' %></p>
-  <p>ユーザーネーム：<%= @user.user.name %></p>
+  <h3><%= @user.name %></h3>
+  <%= image_tag @user.get_image(100,100) %>
 </div>
