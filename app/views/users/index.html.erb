@@ -1,0 +1,11 @@
+<h1>Usersユーザー一覧</h1>
+<p>image</p>
+<p>name</p>
+
+<% @users.each do |users| %>
+  <div>
+    <%= image_tag users.get_image(100,100) %>
+    
+    <p>name：<%= users.name %></p>
+  </div>
+<% end %>
