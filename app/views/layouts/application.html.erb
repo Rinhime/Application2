@@ -14,13 +14,16 @@
     <header>
       <% if user_signed_in? %>
         <li>
-          <%= link_to "Home", user_path %>
-        </li>
-        <li>
-           <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+          <%= link_to "Home", user_path(current_user) %>
         </li>
         <li>
           <%= link_to "Users", users_path %>
+        </li>
+        <li>
+          <%= link_to "Books", users_path %>
+        </li>
+        <li>
+           <%= link_to "Log out", destroy_user_session_path, method: :delete %>
         </li>
       <% else %>
         <li>
@@ -31,16 +34,7 @@
         </li>
       <% end %>
     </header>
-    <sidebar>
-      <h1>New book</h1>
-        <%= form_with model: @book do |f| %>
-          <h4>Title</h4>
-          <%= f.text_field :title %>
-          <h4>Opinion</h4>
-          <%= f.text_area :body %>
-          <%= f.submit 'Create Book' %>
-        <% end %>
-    </sidebar>
+    
     <%= yield %>
   </body>
 </html>

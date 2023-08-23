@@ -1,22 +1,18 @@
 <sidebar>
   <h1>New book</h1>
-    <%= form_with model: @book do |f| %>
+    <%= form_with model: @book_new do |f| %>
       <h4>Title</h4>
       <%= f.text_field :title %>
       <h4>Opinion</h4>
       <%= f.text_area :body %>
       <%= f.submit 'Create Book' %>
     <% end %>
-</sidebar>
 <main>
   <h1>投稿一覧</h1>
-　<% @books.each do |post_image| %>
+　<% @books.each do |book| %>
   <div>
-    <%= image_tag post_image.get_image %>
-    <p>投稿ユーザー画像：<%= image_tag 'default-image.jpg' %></p>
-    <p>ショップ名：<%= post_image.title %></p>
-    <p>説明：<%= post_image.body %></p>
-    <p>ユーザーネーム：<%= post_image.user.name %></p>
+    <p>本のタイトル：<%= book.title %></p>
+    <p>説明：<%= book.body %></p>
   </div>
 <% end %>
 </main>
