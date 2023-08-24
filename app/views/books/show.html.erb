@@ -18,6 +18,7 @@
     <% end %>
 </sidebar>
 <div>
+  <p><%= image_tag book.user.get_image(100,100) %></p>
   <h3><%= @book.title %></h3>
   <h5><%= @book.body %></h5>
   <%= link_to "Edit", edit_user_path %>
