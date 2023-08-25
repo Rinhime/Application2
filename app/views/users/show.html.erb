@@ -21,3 +21,11 @@
       <%= f.submit 'Create Book' %>
     <% end %>
 </sidebar>
+<h1>Books</h1>
+<% @books.each do |book| %>
+  <div>
+    <%= image_tag @user.get_image(100,100) %>
+    <p><%= book.title %></p>
+    <p><%= book.body%></p>
+  </div>
+<% end %>
