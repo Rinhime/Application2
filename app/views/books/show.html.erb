@@ -26,8 +26,8 @@
     <%= @book.title %>
   <% end %>
   <%= @book.body %>
-  <%= link_to "Edit", edit_user_path %>
+  <%= link_to "Edit", edit_book_path %>
   <% if @book.user == current_user %>
-    <%= link_to "Destroy", books_path(@book), method: :delete %>
+    <%= link_to "Destroy", books_path, method: :delete, "data-confirm" => "本当に消しますか？" %>
   <% end %>
 </div>
