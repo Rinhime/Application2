@@ -1,6 +1,6 @@
 <div>
   <h1>User info</h1>
-  <%= image_tag @user.get_image(100,100) %>
+  <%= image_tag @user.get_profile_image(100,100) %>
   <h5>name</h5>
   <h3><%= @user.name %></h3>
   <h5>introduction</h5>
@@ -19,7 +19,7 @@
 </sidebar>
 <h1>Book detail</h1>
 <div>
-  <%= image_tag @user.get_image(100,100) %>
+  <%= image_tag @user.get_profile_image(100,100) %>
   <%= link_to user_path(@user) do %>
     <%= @user.name %>
   <% end %>
@@ -31,6 +31,6 @@
     <%= link_to "Edit", edit_book_path(@user) %>
   <% end %>
   <% if @book.user == current_user %>
-    <%= link_to "Destroy", books_path, method: :delete, "data-confirm" => "本当に消しますか？" %>
+    <%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？" %>
   <% end %>
 </div>
