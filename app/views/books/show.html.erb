@@ -1,12 +1,13 @@
 <%= render 'users/user', user: @user %>
-<%= render 'books/book', book: @book %>
+<%= render 'books/book', book_new: @book_new %>
+
 <h1>Book detail</h1>
 <div>
   <%= image_tag @user.get_profile_image(100,100) %>
   <%= link_to user_path(@user) do %>
     <%= @user.name %>
-  <% end %>
-  <%= link_to user_path(@user) do %>
+  <% end %><br>
+  <%= link_to book_path(@book) do %>
     <%= @book.title %>
   <% end %>
   <%= @book.body %>
