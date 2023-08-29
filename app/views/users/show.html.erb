@@ -1,7 +1,14 @@
 <h1>Books</h1>
 <p>Title</p>
 <p>Opinion</p>
-
+<% if @user.errors.any? %>
+  <%= @uesr.errors.count %> error prohibited this obj from being saved:
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 <%= render 'users/user', user: @user %>
 
 <%= render 'books/book', book_new: @book_new %>
