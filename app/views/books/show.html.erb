@@ -12,7 +12,7 @@
   <% end %>
   <%= @book.body %>
   <% if @user == current_user %>
-    <%= link_to "Edit", edit_book_path(@user) %>
+    <%= link_to "Edit", edit_book_path(@book) %>
   <% end %>
   <% if @book.user == current_user %>
     <%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？" %>
