@@ -25,11 +25,9 @@
               
             <% if user_signed_in? %>
             <div class="header row px-3 py-4">
-              
-              
-              
               <div class="col-6 offset-4">
                 <div class="row">
+                  
                   <div class="col-3">
                     <li class="nav-item">
                       <%= link_to user_path(current_user), class: 'nav-link text-light' do %>
@@ -65,46 +63,50 @@
                       <% end %>
                     </li>
                   </div>
+                  
                 </div>  
               </div>    
               <% else %>
               <div class="header row px-3 py-4">
-                
-                
-                
                 <div class="col-6 offset-4">
                 <div class="row">
+                  
                   <div class="col-3">
                     <li class="nav-item">
-                      <i class="fa-solid fa-house">
-                        <%= link_to "Home", root_path, class: 'nav-link text-light' %>
-                      </i>
+                      <%= link_to root_path, class: 'nav-link text-light' do %>
+                        <i class="fa-solid fa-house"></i>
+                        Home
+                      <% end %>
                     </li>
                   </div>
                   
                   <div class="col-3">
                     <li class="nav-item">
-                      <i class="fa-solid fa-link">
-                        <%= link_to "About", about_path, class: 'nav-link text-light' %>
-                      </i>
+                      <%= link_to about_path, class: 'nav-link text-light' do %>
+                        <i class="fa-solid fa-link"></i>
+                        About
+                      <% end %>
                     </li>
                   </div>
                   
                   <div class="col-3">
                     <li class="nav-item">
-                      <i class="fa-solid fa-user-plus">
-                        <%= link_to "Sign up", new_user_registration_path, class: 'nav-link text-light' %>
-                      </i>
+                      <%= link_to new_user_registration_path, class: 'nav-link text-light' do %>
+                        <i class="fa-solid fa-user-plus"></i>
+                        Sign up
+                      <% end %>
                     </li>
                   </div>
                   
                   <div class="col-3">
                     <li class="nav-item">
-                      <i class="fa-solid fa-right-to-bracket">
-                        <%= link_to "Log in", new_user_session_path, class: 'nav-link text-light' %>
-                      </i>
+                      <%= link_to new_user_session_path, class: 'nav-link text-light' do %>
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        Log in
+                      <% end %>
                     </li>
                   </div>
+                  
                 </div>  
                 </div>  
             </div>
@@ -119,8 +121,8 @@
     </main>
     <footer class="bg-white text-black pt-5 pb-4">
       <div class="container">
-        <div class="row no-gutters">
-          <div class="col-md-4">
+        <div class="row col-7 offset-5">
+          <div class="col-4">
             <p>CopyRight Infratop.inc</p>
           </div>
         </div>
