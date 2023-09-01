@@ -10,19 +10,19 @@
     </ul>
   <% end %>
   <%= form_with model: @user do |f| %>
-    <div class="edit-user-name">
+    <div class="edit-user-name my-2">
       <label for="inputName">Name</label>
       <%= f.text_field :name, :size=>"60", autofocus: true, id:"inputName", placeholder:"名前"%>
     </div>
-    <div class="edit-profile-image">
-      <label for="Image">Image</label>
+    <div class="edit-profile-image my-2">
+      <label for="Image">Image</label><br>
       <%= f.file_field :profile_image, placeholder: "ファイルの選択", accept: "image/*" %>
     </div>
-    <div class="edit-user-introduction">
+    <div class="edit-user-introduction my-2">
       <label for="Introduction">Introduction</label>
       <%= f.text_area :introduction, :size=>"60" %>
-    </div>  
-    <%= f.submit "Update User" %>
+    </div>
+    <input class="btn btn-secondary" type="submit" value="Update User">
   <% end %>
 
 </div>
