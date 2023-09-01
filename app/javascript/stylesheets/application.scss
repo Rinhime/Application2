@@ -22,3 +22,13 @@
 .link {
   width: 500px;
 }
+
+.user-edit-link {
+  background-color: #fff;
+  color: secondary;
+}
+
+.user-edit-link:hover {
+	background-color: secondary;
+	color: #fff;
+}
