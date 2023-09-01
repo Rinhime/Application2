@@ -1,12 +1,13 @@
-<sidebar>
+<div class="new-book">
   
     <h3>New book</h3>
       <%= form_with model: book_new do |f| %>
         <p>Title</p>
-        <%= f.text_field :title %>
+        <%= f.text_field :title, :size=>"30" %>
+        
         <p>Opinion</p>
-        <%= f.text_area :body %>
+        <%= f.text_area :body, :size=>"32" %>
         <input class="btn btn-success" type="submit" value="Create Book">
       <% end %>
     
-</sidebar>
+</div>
