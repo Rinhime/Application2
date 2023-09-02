@@ -1,5 +1,3 @@
-
-  
   <h3>User info</h3>
   <%= image_tag user.get_profile_image(100,100) %>
   <table class="table">
@@ -15,13 +13,13 @@
         <th><%= user.introduction %></th>
       </tr>
     </tbody>
-    
+
   </table>
-  
+
   <div class="user-edit-link">
     <button type="button" class="btn btn-outline-secondary btn-block">
       <%= link_to edit_user_path(user.id), class: 'user-link text-secondary' do %>
-          <i class="fa-solid fa-user-gear"></i>
+          <i class="fa-solid fa-user-cog"></i>
       <% end %>
     </button>
   </div>
