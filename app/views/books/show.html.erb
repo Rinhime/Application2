@@ -21,7 +21,7 @@
   　       <tr>
   　         <td>
   　           <%= image_tag @user.get_profile_image(100,100) %>
-  　           <%= link_to user_path(@user) do %>
+  　           <%= link_to user_path(@user) do %><br>
       　         <%= @user.name %>
     　         <% end %>
   　         </td>
@@ -34,9 +34,11 @@
   　           <%= @book.body %>
   　         </td>
   　         <td>
-  　         <% if @user == current_user %>
-    　         <%= link_to "Edit", edit_book_path(@book) %>
-    　       <% end %>
+  　           <a class="btn btn-success" href="/books/#{params.id}/edit">
+  　         　　<% if @user == current_user %>
+    　         　　<%= link_to "Edit", edit_book_path(@book) %>
+    　       　　<% end %>
+    　       　</a>
   　         </td>
   　         <td>
   　           <% if @book.user == current_user %>
