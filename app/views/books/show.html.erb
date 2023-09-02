@@ -1,31 +1,53 @@
-
-<%= render 'users/user', user: @user %>
-<%= render 'books/book', book_new: @book_new %>
-
-<h1>Editing Book</h1>
-<% if @book.errors.any? %>
-  <%= @book.errors.count %>errors prohibited this obj from being saved:
-  <ul>
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+<div class="container">
+  <div class="row my-5">
+    <% if @book.errors.any? %>
+      <%= @book.errors.count %>errors prohibited this obj from being saved:
+      <ul>
+        <% @book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
     <% end %>
-  </ul>
-<% end %>
+  </div>
+  <div class="col2 offset-2 mx-4">
+    <%= render 'users/user', user: @user %>
+    <%= render 'books/book', book_new: @book_new %>
+  </div>
 
-<h1>Book detail</h1>
-<div>
-  <%= image_tag @user.get_profile_image(100,100) %>
-  <%= link_to user_path(@user) do %>
-    <%= @user.name %>
-  <% end %><br>
-  <%= link_to book_path(@book) do %>
-    <%= @book.title %>
-  <% end %>
-  <%= @book.body %>
-  <% if @user == current_user %>
-    <%= link_to "Edit", edit_book_path(@book) %>
-  <% end %>
-  <% if @book.user == current_user %>
-    <%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？" %>
-  <% end %>
+　<div class="col-7">
+  　<h1>Book detail</h1>
+  　<table class="table">
+  　   <tbody>
+  　     <tr>
+  　       <th>
+  　         <%= image_tag @user.get_profile_image(100,100) %>
+  　         <%= link_to user_path(@user) do %>
+      　       <%= @user.name %>
+    　       <% end %>
+  　       </th>
+  　       <th>
+  　        
+  　       </th>
+  　       <th>
+  　         <%= link_to book_path(@book) do %>
+      　       <%= @book.title %>
+    　       <% end %>
+  　       </th>
+  　       <th>
+  　         <%= @book.body %>
+  　       </th>
+  　       <th>
+  　         <% if @user == current_user %>
+    　         <%= link_to "Edit", edit_book_path(@book) %>
+    　       <% end %>
+  　       </th>
+  　       <th>
+  　         <% if @book.user == current_user %>
+      　       <%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？" %>
+    　       <% end %>
+  　       </th>
+  　     </tr>
+    　</tbody>
+    </table>　
+　</div>
 </div>
