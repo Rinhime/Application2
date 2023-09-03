@@ -1,4 +1,4 @@
-<%= flash[:notice] %>
+
 <div class="container">
   <% if @book.errors.any? %>
     <%= @book.errors.count %>errors prohibited this obj from being saved:
@@ -34,11 +34,11 @@
   　           <%= @book.body %>
   　         </td>
   　         <td>
-  　           <a class="btn btn-success" href="/books/#{params.id}/edit">
+  　          
   　         　　<% if @user == current_user %>
     　         　　<%= link_to "Edit", edit_book_path(@book) %>
     　       　　<% end %>
-    　       　</a>
+    　       
   　         </td>
   　         <td>
   　           <% if @book.user == current_user %>
