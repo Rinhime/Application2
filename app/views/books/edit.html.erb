@@ -1,24 +1,28 @@
-<div class="main row justify-content-center">
-  <div class="col-3 py-4">
-    <h1>Editing Book</h1>
-　  <% if @book.errors.any? %>
-  　   <%= @book.errors.count %>errors prohibited this obj from being saved:
-  　   <ul>
-    　   <% @book.errors.full_messages.each do |message| %>
-      　   <li><%= message %></li>
-    　   <% end %>
-  　   </ul>
-　  <% end %>
-　</div>
-　
-　<%= form_with model: @book do |f| %>
-  　<h4>Title</h4>
-  　<%= f.text_field :title %>
-  　<h4>Opinion</h4>
-  　<%= f.text_area :body %>
-  　<%= f.submit 'Update Book' %>
-  　<%= link_to "Show", book_path %>
-  　<p>|</p>
-  　<%= link_to "Back", books_path %>
-　<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <h1>Editing Book</h1>
+      <% if @book.errors.any? %>
+        <%= @book.errors.count %>errors prohibited this obj from being saved:
+        <ul>
+          <% @book.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
+      <%= form_with model: @book do |f| %>
+        <p>Title</p>
+        <%= f.text_field :title, :size=>"47" %>
+        <p>Opinion</p>
+        <%= f.text_area :body, :size=>"50" %>
+        <input class="btn btn-success" type="submit" value="Update Book"><br>
+        <div class="edit-page-link">
+          <%= link_to "Show", book_path %>
+          <p>|</p>
+          <%= link_to "Back", books_path %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
